@@ -24,4 +24,4 @@ production:
   username: <%= ENV.fetch("DB_USER") { "street_fighter" } %>
   password: <%= ENV.fetch("POSTGRES_PASSWORD") { "" } %>
   host: <%= ENV.fetch("DB_HOST") { "localhost" } %>
-  port: <%= ENV.fetch("DB_PORT") { 5433 } %>
+  port: <%= ENV.fetch("DB_PORT") { 5432 } %>
