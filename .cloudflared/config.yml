@@ -1,0 +1,6 @@
+tunnel: c7412b06-f17e-4a0c-99d0-5f3693d56a61
+
+ingress:
+  - hostname: dev-street-fighter.houtine.com
+    service: http://localhost:3001
+  - service: http_status:404

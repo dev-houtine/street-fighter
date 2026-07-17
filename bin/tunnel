@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+require "dotenv"
+require "tmpdir"
+Dotenv.load(File.expand_path("../../.env", __FILE__))
+
+credentials = ENV.fetch("CLOUDFLARE_TUNNEL_CREDENTIALS") do
+  abort "Missing CLOUDFLARE_TUNNEL_CREDENTIALS in .env"
+end
+
+credentials_file = File.join(Dir.tmpdir, "street_fighter_tunnel_credentials.json")
+File.write(credentials_file, credentials)
+at_exit { File.delete(credentials_file) if File.exist?(credentials_file) }
+
+config = File.expand_path("../../.cloudflared/config.yml", __FILE__)
+exec "cloudflared", "tunnel", "--config", config, "--credentials-file", credentials_file, "run"
