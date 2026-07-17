@@ -38,7 +38,7 @@ accessories:
   db:
     image: postgres:17
     host: 89.167.17.134
-    port: "127.0.0.1:5435:5432"
+    port: "127.0.0.1:5436:5432"
     env:
       clear:
         POSTGRES_USER: street_fighter
