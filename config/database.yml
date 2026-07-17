@@ -1,0 +1,27 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  port: 5433
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  gssencmode: disable
+
+development:
+  <<: *default
+  database: street_fighter_development
+  username: street_fighter
+  password: street_fighter_123
+
+test:
+  <<: *default
+  database: street_fighter_test
+  username: street_fighter
+  password: street_fighter_123
+
+production:
+  <<: *default
+  database: <%= ENV.fetch("DB_NAME") { "street_fighter_production" } %>
+  username: <%= ENV.fetch("DB_USER") { "street_fighter" } %>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD") { "" } %>
+  host: <%= ENV.fetch("DB_HOST") { "localhost" } %>
+  port: <%= ENV.fetch("DB_PORT") { 5433 } %>

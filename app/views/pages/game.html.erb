@@ -1,0 +1,33 @@
+<div data-controller="street-fighter" class="flex items-center justify-center min-h-screen bg-black">
+  <%# Hidden assets referenced by ID by the game engine %>
+  <img id="KenImage"     src="/images/ken.png"      style="display:none;" />
+  <img id="RyuImage"     src="/images/ryu.png"      style="display:none;" />
+  <img id="KenStage"     src="/images/KenStage.png" style="display:none;" />
+  <img id="hud"          src="/images/hud.png"      style="display:none;" />
+  <img id="ShadowImage"  src="/images/shadow.png"   style="display:none;" />
+  <img id="Logo"         src="/images/logo.png"     style="display:none;" />
+  <img id="Winner"       src="/images/winner.png"   style="display:none;" />
+  <img id="Decals"       src="/images/decal.png"    style="display:none;" />
+  <img id="Controls"     src="/images/controls.png" style="display:none;" />
+
+  <%# Sound effects — IDs must match constants/sounds.js soundAttackIds / soundHitIds / soundLandId %>
+  <audio id="sound-fighter-light-attack"   src="/sounds/punch-light.ogg"  preload="auto"></audio>
+  <audio id="sound-fighter-medium-attack"  src="/sounds/punch-medium.ogg" preload="auto"></audio>
+  <audio id="sound-fighter-heavy-attack"   src="/sounds/punch-heavy.ogg"  preload="auto"></audio>
+  <audio id="sound-fighter-land"           src="/sounds/landing.ogg"      preload="auto"></audio>
+  <audio id="sound-fighter-light-punch-hit"  src="/sounds/hit-light.ogg"  preload="auto"></audio>
+  <audio id="sound-fighter-light-kick-hit"   src="/sounds/hadouken-hit.ogg" preload="auto"></audio>
+  <audio id="sound-fighter-medium-punch-hit" src="/sounds/hit-medium.ogg" preload="auto"></audio>
+  <audio id="sound-fighter-medium-kick-hit"  src="/sounds/hit-medium.ogg" preload="auto"></audio>
+  <audio id="sound-fighter-heavy-punch-hit"  src="/sounds/hit-heavy.ogg"  preload="auto"></audio>
+  <audio id="sound-fighter-heavy-kick-hit"   src="/sounds/hit-heavy.ogg"  preload="auto"></audio>
+  <%# Hadouken sounds — same for Ken and Ryu in this version %>
+  <audio id="sound-ken-hadouken"  src="/sounds/hadouken.ogg" preload="auto"></audio>
+  <audio id="sound-ryu-hadouken"  src="/sounds/hadouken.ogg" preload="auto"></audio>
+  <%# Background music — referenced by KenStage as 'kensTheme' %>
+  <audio id="kensTheme"  src="/sounds/ken-stage.ogg" preload="auto"></audio>
+
+  <canvas data-street-fighter-target="canvas"
+          width="764" height="448"
+          class="border-4 border-yellow-400 max-w-full"></canvas>
+</div>
